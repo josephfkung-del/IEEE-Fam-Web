@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FamilIEEEs — Review Queue</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body class="admin-body">
+  <header class="topbar admin-topbar">
+    <a class="brand" href="/"><span class="brand-mark">IEEE</span><span>FamilIEEEs</span></a>
+    <div class="admin-nav"><a href="/">Public form</a><button id="logoutBtn" class="ghost-btn">Log out</button></div>
+  </header>
+
+  <main class="admin-shell">
+    <section class="admin-heading">
+      <div><span class="eyebrow">ADMIN DASHBOARD</span><h1>Event review queue</h1><p>Verify the rule checks, look at the photo, then approve or deny each submission.</p></div>
+      <div class="summary-cards">
+        <div><span>Pending</span><strong id="pendingCount">—</strong></div>
+        <div><span>Approved</span><strong id="approvedCount">—</strong></div>
+        <div><span>Denied</span><strong id="deniedCount">—</strong></div>
+      </div>
+    </section>
+
+    <section class="admin-toolbar">
+      <div class="filter-tabs" id="filterTabs">
+        <button class="active" data-status="pending">Pending</button>
+        <button data-status="approved">Approved</button>
+        <button data-status="denied">Denied</button>
+        <button data-status="all">All</button>
+      </div>
+      <input id="searchInput" class="search-input" placeholder="Search family or event..." />
+    </section>
+
+    <section id="submissionList" class="submission-list">
+      <div class="loading-state">Loading submissions…</div>
+    </section>
+  </main>
+
+  <template id="submissionTemplate">
+    <article class="submission-card">
+      <div class="proof-wrap"><img class="proof-photo" alt="Event proof" /></div>
+      <div class="submission-main">
+        <div class="submission-topline"><div><span class="family-badge"></span><h2 class="event-title"></h2></div><span class="review-status"></span></div>
+        <p class="event-description"></p>
+        <div class="meta-grid">
+          <div><span>Date</span><strong class="event-date"></strong></div>
+          <div><span>Submitted by</span><strong class="submitter"></strong></div>
+          <div><span>Attendees</span><strong class="member-count"></strong></div>
+          <div><span>Type</span><strong class="event-type"></strong></div>
+        </div>
+        <div class="rule-checks">
+          <div class="rule rule-members"></div>
+          <div class="rule rule-head"></div>
+          <div class="rule rule-advertised"></div>
+          <div class="rule rule-photo ok">✓ Photo proof attached</div>
+        </div>
+        <div class="review-controls">
+          <label class="field points-field"><span>Points to award</span><input class="points-input" type="number" min="0" max="999" /></label>
+          <label class="field note-field"><span>Reviewer note</span><input class="note-input" maxlength="1000" placeholder="Optional note / denial reason" /></label>
+          <div class="review-buttons"><button class="deny-btn">Deny</button><button class="approve-btn">Approve</button></div>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="/static/admin.js"></script>
+</body>
+</html>
