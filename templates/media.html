@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FamilIEEEs — Fam Feed</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <link rel="stylesheet" href="/static/media.css" />
+</head>
+<body class="site-body">
+  <header class="topbar">
+    <a class="brand" href="/"><span class="brand-mark">IEEE</span><span>FamilIEEEs</span></a>
+    <nav class="admin-nav"><a href="/">Submit event</a><a href="/media">Fam feed</a><a href="/admin">Admin review</a></nav>
+  </header>
+
+  <main class="media-shell">
+    <section class="media-hero">
+      <span class="eyebrow">WHAT THE FAMS ARE UP TO</span>
+      <h1>FamilIEEE <span>Feed</span></h1>
+      <p>Approved socials, quests, competitions, and IEEE events from across the FamilIEEEs community.</p>
+    </section>
+
+    <section class="media-toolbar panel">
+      <div>
+        <label for="familyFilter">FamilIEEE</label>
+        <select id="familyFilter"><option value="">All FamilIEEEs</option></select>
+      </div>
+      <div class="media-stats"><strong id="shownCount">0</strong><span>events shown</span></div>
+    </section>
+
+    <section id="mediaGrid" class="media-grid" aria-live="polite">
+      <div class="media-loading">Loading the fam feed…</div>
+    </section>
+
+    <div class="load-more-wrap">
+      <button id="loadMoreBtn" class="primary-btn" hidden>Load more</button>
+    </div>
+  </main>
+
+  <footer>Only admin-approved submissions are shown here · IEEE FamilIEEEs · UCLA</footer>
+  <script src="/static/media.js"></script>
+</body>
+</html>
