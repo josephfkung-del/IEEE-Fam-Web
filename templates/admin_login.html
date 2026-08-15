@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FamilIEEEs Admin</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body class="login-body">
+  <main class="login-card">
+    <a class="brand centered" href="/"><span class="brand-mark">IEEE</span><span>FamilIEEEs</span></a>
+    <div class="lock-icon">⌁</div>
+    <span class="step-label">ADMIN REVIEW</span>
+    <h1>Review event submissions</h1>
+    <p>Sign in with the admin password to approve events, deny submissions, and assign points.</p>
+    <form id="loginForm" class="login-form">
+      <label class="field"><span>Admin password</span><input id="password" type="password" autocomplete="current-password" required autofocus /></label>
+      <p id="loginMessage" class="form-message"></p>
+      <button class="primary-btn full" type="submit">Open review queue <span>→</span></button>
+    </form>
+  </main>
+  <script src="/static/admin-login.js"></script>
+</body>
+</html>
