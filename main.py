@@ -125,3 +125,8 @@ async def review(sid:str,r:Request):
  except:p=0
  if st!='approved':p=0
  note=str(b.get('reviewer_note',''))[:1000] or None;rt=datetime.now(timezone.utc).isoformat() if st!='pending' else None;ex('UPDATE familieee_submissions SET status=?,points_awarded=?,reviewer_note=?,reviewed_at=? WHERE id=?',(st,p,note,rt,sid));return {'ok':True}
+@app.delete('/api/admin/submissions/{sid}')
+def delete_submission(sid:str,r:Request):
+ need(r);x=one('SELECT id FROM familieee_submissions WHERE id=?',(sid,))
+ if not x:raise HTTPException(404,'Submission not found')
+ ex('DELETE FROM familieee_submissions WHERE id=?',(sid,));return {'ok':True}
