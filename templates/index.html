@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FamilIEEEs — Event Check-In</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body class="site-body">
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-mark">IEEE</span>
+      <span>FamilIEEEs</span>
+    </a>
+    <a class="admin-link" href="/admin">Admin review</a>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">IEEE at UCLA · FamilIEEEs</span>
+        <h1>Flex your event.<br><span>Earn the points.</span></h1>
+        <p>Upload one proof photo and tell us what your FamilIEEE did. Your submission goes into the review queue for approval.</p>
+        <div class="rule-pills">
+          <span>4+ fam members</span>
+          <span>1+ fam head</span>
+          <span>Advertised beforehand</span>
+          <span>Photo proof</span>
+        </div>
+      </div>
+      <aside class="score-card">
+        <div class="score-icon">★</div>
+        <div>
+          <strong>Points rule</strong>
+          <p>For a standard social/event, each attending fam member counts as +1 point once the event is approved.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="content-grid">
+      <div class="panel form-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="step-label">EVENT SUBMISSION</span>
+            <h2>Send proof for review</h2>
+          </div>
+          <span class="status-dot">Usually reviewed by an IVP/admin</span>
+        </div>
+
+        <form id="submissionForm" class="form-grid">
+          <label class="field">
+            <span>FamilIEEE name *</span>
+            <input name="family_name" required maxlength="120" placeholder="e.g. Circuit Breakers" />
+          </label>
+          <label class="field">
+            <span>Your name *</span>
+            <input name="submitter_name" required maxlength="120" placeholder="First + last name" />
+          </label>
+          <label class="field">
+            <span>Event title *</span>
+            <input name="event_title" required maxlength="160" placeholder="Beach picnic, hot pot night..." />
+          </label>
+          <label class="field">
+            <span>Event date *</span>
+            <input name="event_date" type="date" required />
+          </label>
+          <label class="field">
+            <span>Event type</span>
+            <select name="event_type">
+              <option value="social">FamilIEEE social / event</option>
+              <option value="clubwide">IEEE clubwide event</option>
+              <option value="quest">Quest</option>
+              <option value="competition">Inter-FamilIEEE competition</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Number of fam members there *</span>
+            <input name="member_count" type="number" min="0" max="100" value="4" required />
+          </label>
+          <label class="field field-wide">
+            <span>Brief description *</span>
+            <textarea name="description" required maxlength="1800" rows="5" placeholder="What did you do? Add any context that will help the reviewer verify the event."></textarea>
+          </label>
+
+          <div class="check-row field-wide">
+            <label class="check-card">
+              <input type="checkbox" name="fam_head_present" />
+              <span><strong>A fam head attended</strong><small>At least one fam head is required for a standard event to count.</small></span>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" name="advertised_beforehand" />
+              <span><strong>Advertised to the whole fam</strong><small>The event was shared with the entire FamilIEEE before it happened.</small></span>
+            </label>
+          </div>
+
+          <label class="upload field-wide" id="dropZone">
+            <input id="photoInput" type="file" accept="image/*" required />
+            <div id="uploadPrompt">
+              <div class="upload-icon">↥</div>
+              <strong>Upload proof photo *</strong>
+              <span>Choose a photo showing the attendees. Large photos are compressed before upload.</span>
+            </div>
+            <img id="photoPreview" alt="Selected proof preview" hidden />
+          </label>
+
+          <div class="form-actions field-wide">
+            <p id="formMessage" class="form-message" aria-live="polite"></p>
+            <button class="primary-btn" id="submitBtn" type="submit">Submit event <span>→</span></button>
+          </div>
+        </form>
+      </div>
+
+      <aside class="sidebar">
+        <section class="panel mini-panel">
+          <span class="step-label">QUICK RULE CHECK</span>
+          <h3>What makes an event count?</h3>
+          <ol class="rules-list">
+            <li><b>4 total fam members</b><span>Fam heads and fam children both count.</span></li>
+            <li><b>At least 1 fam head</b><span>A standard social needs a fam head present.</span></li>
+            <li><b>Advertised beforehand</b><span>The whole FamilIEEE should have had a chance to join.</span></li>
+            <li><b>Photo proof</b><span>The reviewer should be able to verify who attended.</span></li>
+          </ol>
+        </section>
+
+        <section class="panel mini-panel leaderboard-panel">
+          <div class="mini-heading"><span class="step-label">LEADERBOARD</span><span>Approved only</span></div>
+          <div id="leaderboard" class="leaderboard"><div class="empty-state">No approved events yet.</div></div>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer>Built for IEEE FamilIEEEs · UCLA</footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
