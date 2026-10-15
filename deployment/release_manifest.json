@@ -1,0 +1,26 @@
+{
+  "project": "prj_GwKqABitBKoyZtnv8IvShfgkrH1m",
+  "team": "team_htjFWmymOQqQC9HAXLrjBGYl",
+  "baseline_deployment": "dpl_6UqE8eVpq44uU1TMr41hfVafGHFZ",
+  "preserved_files": [
+    {
+      "file": "legacy_app.py",
+      "sha": "fc1bbff142143f345e2c93899e6a231b78aa5eb8"
+    },
+    {
+      "file": "location_patch.py",
+      "sha": "42c88ae29bf30be33f23ea6ffb846430baeeb7ec"
+    },
+    {
+      "file": "baseline_entry.py",
+      "sha": "803416b11c0498fd3fa27ec4204ad7a774d2ec0c"
+    }
+  ],
+  "source_files": [
+    "main.py",
+    "submission_reliability.py",
+    "submission_form.js",
+    "qa_reliability.py"
+  ],
+  "build_command": "python qa_reliability.py"
+}
